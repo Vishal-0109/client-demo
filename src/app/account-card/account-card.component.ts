@@ -17,4 +17,11 @@ export class AccountCardComponent {
   goToTransfer() {
     this.router.navigate(['/account-detail']);
   }
+  // component.ts
+isRed = false;
+
+toggleColor() {
+  this.isRed = !this.isRed;
+}
+isHighlighted = false;
 }

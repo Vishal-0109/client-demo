@@ -1,11 +1,14 @@
-<article  [ngStyle]="{'border-top': '5px solid ' + getAccent()}" class="card">
+<article [ngStyle]="{'border-top': '5px solid ' + getAccent()}" class="card">
   <div class="head">
-    <h2>{{ card.title }}</h2>
+    <h2 [class.highlight]="isHighlighted" (click)="isHighlighted = !isHighlighted">{{ card.title }}</h2>
     <div class="chip">{{ card.icon }}</div>
   </div>
 
   <div class="amount" [class.negative]="card.negative">
     <span class="sign">{{ amountSign }}</span>
+    <span class="sign" [class.red]="isRed" [class.green]="!isRed" (click)="toggleColor()">
+      {{ amountSign }}
+    </span>
     <span class="major">€ {{ card.amount }}</span>,<span class="minor">{{ card.amountCents }}</span>
   </div>
   @if (card.available !== undefined || card.prebooked !== undefined) {

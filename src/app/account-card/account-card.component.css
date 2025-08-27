@@ -27,3 +27,21 @@
     padding: 8px;
     border-radius: 8px;
 }
+
+.sign {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+.highlight {
+  background-color: yellow; /* highlight effect */
+  color: black;             /* optional: make text readable */
+}
