@@ -1,0 +1,88 @@
+/* Header overrides */
+.appbar {
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    background: #e6005c;
+    /* pink header */
+    color: #fff;
+}
+
+.back-arrow {
+    font-weight: bold;
+    font-size: 32px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.header-text .title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.header-text .subtitle {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* Card */
+.card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card-item {
+    display: flex;
+    align-items: center;
+    padding: 14px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.card-item:last-child {
+    border-bottom: none;
+}
+
+/* Icon + Text */
+.icon {
+    font-size: 24px;
+    color: #1e64ff;
+    margin-right: 12px;
+}
+
+.item-title {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
+
+.item-subtitle {
+    font-size: 13px;
+    color: #666;
+}
+
+.card-wrap {
+    margin-top: -20px;
+    /* pulls card into header */
+    padding: 0 14px;
+}
+
+.ml-20 {
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: -15px;
+    font-weight: bold;
+}
+
+.card-detail {
+    margin-top: 14px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}

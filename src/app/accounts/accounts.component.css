@@ -1,0 +1,57 @@
+.page {
+    position: relative;
+    min-height: 100vh;
+    padding-bottom: 86px;
+}
+
+.appbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    background: #1e64ff;
+    color: #fff;
+}
+
+.appbar-btn {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: #1e64ff;
+    color: #fff;
+}
+
+.content {
+    margin-top: -40px;
+    padding: 14px;
+}
+
+.card-wrap {
+    margin-top: 14px;
+}
+
+.spacer {
+    height: 16px;
+}
+
+.icon-btn {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 999px;
+    background: #1a56e8;
+    color: #fff;
+    border: 0px solid rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+}
+
+.icon-btn.profile {
+    outline: 3px solid rgba(12, 35, 64, .25);
+    background: transparent;
+    border: none
+}
+
+.icon-btn:active {
+    transform: translateY(1px);
+}

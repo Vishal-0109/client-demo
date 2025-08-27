@@ -1,0 +1,12 @@
+<div class="account-card">
+    <div class="account-icon">
+        <span>🏦</span>
+    </div>
+    <div class="account-details">
+        <h4>Giro account</h4>
+        <div>{{card.account}}</div>
+        <div [ngClass]="getAmountClass()">
+            {{ card.currency }} {{ card.amount }}
+        </div>
+    </div>
+</div>

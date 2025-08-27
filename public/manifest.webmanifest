@@ -1,0 +1,23 @@
+{
+  "name": "client-demo",
+  "short_name": "client-demo",
+  "description": "Progressive Web App",
+ 
+  "scope": "/client-demo/",
+  "start_url": "/client-demo/",
+ 
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+ 
+  
+  "display": "standalone", 
+ 
+  
+  "icons": [
+      {
+        "src": "/github-page-pwa/img/icon.png",
+        "type": "image/png",
+        "sizes": "700x700"
+      }
+  ]
+}

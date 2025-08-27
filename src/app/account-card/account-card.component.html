@@ -1,0 +1,26 @@
+<article  [ngStyle]="{'border-top': '5px solid ' + getAccent()}" class="card">
+  <div class="head">
+    <h2>{{ card.title }}</h2>
+    <div class="chip">{{ card.icon }}</div>
+  </div>
+
+  <div class="amount" [class.negative]="card.negative">
+    <span class="sign">{{ amountSign }}</span>
+    <span class="major">€ {{ card.amount }}</span>,<span class="minor">{{ card.amountCents }}</span>
+  </div>
+  @if (card.available !== undefined || card.prebooked !== undefined) {
+  <div class="sub">
+    @if (card.prebooked) {
+    <div>–€{{ card.prebooked }} prebooked</div>
+    }
+    @if (card.available) {
+    <div>€ {{ card.available }} available</div>
+    }
+  </div>
+  }
+
+  @if(card.actionText) {
+  <button class="ghost" (click)="goToTransfer()">{{ card.actionText }}</button>
+  }
+
+</article>
