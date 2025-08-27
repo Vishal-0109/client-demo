@@ -1,0 +1,79 @@
+{
+  "configVersion": 1,
+  "timestamp": 1756277597020,
+  "index": "/client-demo/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/client-demo/favicon.ico",
+        "/client-demo/index.html",
+        "/client-demo/main-3VKZXMIV.js",
+        "/client-demo/manifest.webmanifest",
+        "/client-demo/scripts-N7CG43RU.js",
+        "/client-demo/styles-BVJQD57C.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/client-demo/icons/icon-128x128.png",
+        "/client-demo/icons/icon-144x144.png",
+        "/client-demo/icons/icon-152x152.png",
+        "/client-demo/icons/icon-192x192.png",
+        "/client-demo/icons/icon-384x384.png",
+        "/client-demo/icons/icon-512x512.png",
+        "/client-demo/icons/icon-72x72.png",
+        "/client-demo/icons/icon-96x96.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/client-demo/favicon.ico": "9c39f434fe1261f68c5e3eefdf734630d99c5670",
+    "/client-demo/icons/icon-128x128.png": "f912963bdc6d5a38d8f1dd0afbaab2ce8d657acb",
+    "/client-demo/icons/icon-144x144.png": "b155fd5f2fd5d2ea7760721063003c4cd95fd783",
+    "/client-demo/icons/icon-152x152.png": "eae6e0f0c8afb8aaae339e2a569b43e9238e5e6c",
+    "/client-demo/icons/icon-192x192.png": "15c4180454633880d98674aa7394656196c91584",
+    "/client-demo/icons/icon-384x384.png": "94a915751ef6c9282df9aea405ad679230631814",
+    "/client-demo/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
+    "/client-demo/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
+    "/client-demo/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
+    "/client-demo/index.html": "120ffdbcecab717310d8ed6db38bc12949c24d14",
+    "/client-demo/main-3VKZXMIV.js": "f6ba47f9092352706ae99b940dc955cf98cd694c",
+    "/client-demo/manifest.webmanifest": "08f7b27f7250403a00f3d909f3c33e9a378ed252",
+    "/client-demo/scripts-N7CG43RU.js": "8c0d1a26ca54a79e68728437175e57f8ddc83c5c",
+    "/client-demo/styles-BVJQD57C.css": "386eac571570e25349aa8abed412809789ad1c9a"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
