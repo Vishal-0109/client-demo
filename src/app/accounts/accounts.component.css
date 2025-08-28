@@ -55,3 +55,8 @@
 .icon-btn:active {
     transform: translateY(1px);
 }
+
+.highlight {
+  background-color: yellow; 
+  color: black;             
+}

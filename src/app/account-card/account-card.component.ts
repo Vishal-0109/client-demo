@@ -10,6 +10,9 @@ import { NgStyle } from '@angular/common';
   styleUrls: ['./account-card.component.css']
 })
 export class AccountCardComponent {
+  isHighlighted = false;
+  isIconHighlighted=false;
+  isAmountHighlighted=false;
   @Input() card!: AccountCard;
   constructor(private router: Router) { }
   get amountSign() { return this.card.negative ? '–' : ''; }
@@ -18,10 +21,26 @@ export class AccountCardComponent {
     this.router.navigate(['/account-detail']);
   }
   // component.ts
-isRed = false;
+  isRed = false;
 
-toggleColor() {
-  this.isRed = !this.isRed;
-}
-isHighlighted = false;
+  toggleColor() {
+    this.isRed = !this.isRed;
+  }
+  getErrorHighlight() {
+    if (this.card.title === 'girrro account') {
+      this.isHighlighted = !this.isHighlighted
+    }
+  }
+
+   getIconErrorHighlight() {
+    if (this.card.title === 'Smartcard Mastercard') {
+      this.isIconHighlighted = !this.isIconHighlighted
+    }
+  }
+
+  getAmountErrorHighlight() {
+    if (this.card.title === 'Portfolio') {
+      this.isAmountHighlighted = !this.isAmountHighlighted
+    }
+  }
 }
