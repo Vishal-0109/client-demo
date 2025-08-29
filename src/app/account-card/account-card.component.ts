@@ -11,17 +11,17 @@ import { NgStyle } from '@angular/common';
 })
 export class AccountCardComponent {
   isHighlighted = false;
-  isIconHighlighted=false;
-  isAmountHighlighted=false;
+  isIconHighlighted = false;
+  isAmountHighlighted = false;
+  isAvailAmountHighlighted = false;
+  isRed = false;
   @Input() card!: AccountCard;
   constructor(private router: Router) { }
   get amountSign() { return this.card.negative ? '–' : ''; }
-  getAccent() { console.log(this.card.accent); return this.card.accent; }
+  getAccent() { return this.card.accent; }
   goToTransfer() {
     this.router.navigate(['/account-detail']);
   }
-  // component.ts
-  isRed = false;
 
   toggleColor() {
     this.isRed = !this.isRed;
@@ -32,7 +32,7 @@ export class AccountCardComponent {
     }
   }
 
-   getIconErrorHighlight() {
+  getIconErrorHighlight() {
     if (this.card.title === 'Smartcard Mastercard') {
       this.isIconHighlighted = !this.isIconHighlighted
     }
@@ -41,6 +41,12 @@ export class AccountCardComponent {
   getAmountErrorHighlight() {
     if (this.card.title === 'Portfolio') {
       this.isAmountHighlighted = !this.isAmountHighlighted
+    }
+  }
+
+  getAvailAmountErrorHighlight() {
+    if (this.card.title === 'girrro account') {
+      this.isAvailAmountHighlighted = !this.isAvailAmountHighlighted
     }
   }
 }

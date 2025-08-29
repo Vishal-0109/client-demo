@@ -46,7 +46,7 @@
     cursor: pointer;
 }
 
-.icon-btn.profile {
+.icon-btn.logout {
     outline: 3px solid rgba(12, 35, 64, .25);
     background: transparent;
     border: none

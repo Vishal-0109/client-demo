@@ -8,6 +8,36 @@
     color: #fff;
 }
 
+.icon-btn {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    border-radius: 999px;
+    background: #1a56e8;
+    color: #fff;
+    border: 0px solid rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+}
+
+.appbar-btn {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    padding: 10px;
+    color: #fff;
+    top: 10px;
+    /* adjust spacing from top */
+    right: 10px;
+}
+
+.icon-btn.logout {
+    outline: 3px solid rgba(12, 35, 64, .25);
+    background: transparent;
+    border: none
+}
+
 .back-arrow {
     font-weight: bold;
     font-size: 32px;

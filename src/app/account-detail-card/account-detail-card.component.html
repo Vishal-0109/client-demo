@@ -6,7 +6,7 @@
         <h4>Giro account</h4>
         <div>{{card.account}}</div>
         <div [ngClass]="getAmountClass()">
-            {{ card.currency }} {{ card.amount }}
+            {{ card.currency }} {{ card.amount }},{{card.amountCents}}
         </div>
     </div>
 </div>

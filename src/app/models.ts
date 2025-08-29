@@ -7,12 +7,12 @@ export interface AccountCard {
     subtitle?: string;
     amount?: number; // main number
     amountCents?: number; // for ",25" etc
-    available?: number; // sub caption value
-    prebooked?: number; // only for credit card sample
+    available?: string; // sub caption value
+    prebooked?: string; // only for credit card sample
     negative?: boolean; // renders in red and with leading "–"
     accent?: Accent;
     icon?: string; // emoji or inline svg text
     actionText?: string; // CTA under the card
-    account?: string
-    currency?: string
+    account?: string;
+    currency?: string;
 }
