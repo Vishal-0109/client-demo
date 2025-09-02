@@ -1,6 +1,6 @@
 <div class="page">
   <header class="appbar">
-    <h1 [class.highlight]="isHighlighted" (dblclick)="isHighlighted = !isHighlighted">{{ title }}</h1>
+    <h1 [class.highlight]="isOverviewHighlighted" (click)=getTitleHighlight()>{{ title }}</h1>
     <div class="appbar-btn">
       <button class="icon-btn" aria-label="Search" title="Search">
         <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2"
@@ -12,7 +12,7 @@
       <button class="icon-btn profile" aria-label="logout" title="Logout" (click)="onLogout()">
         <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"
           stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="9" />     
+          <circle cx="12" cy="12" r="9" />
           <line x1="12" y1="7" x2="12" y2="13" />
         </svg>
       </button>

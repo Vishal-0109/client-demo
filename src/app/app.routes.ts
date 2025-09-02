@@ -6,6 +6,6 @@ import {LoginComponent } from './login/login.component';
 export const routes: Routes = [
     { path: '', component: LoginComponent },
     { path: 'accounts', component: AccountsComponent },
-     { path: 'account-detail', component: AccountDetailComponent },
+     { path: 'account-detail/:actionText', component: AccountDetailComponent },
     { path: '**', redirectTo: '' }
 ];

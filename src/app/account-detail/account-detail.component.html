@@ -2,7 +2,7 @@
     <header class="appbar">
         <span class="back-arrow" (click)="goBack()">←</span>
         <div class="header-text">
-            <h1>New Transfer</h1>
+            <h1 [class.highlight]="isTitleHighlighted" (click)="getTitleHighlight()">New Transfer</h1>
             <h5>From Giro account</h5>
         </div>
         <div class="appbar-btn">

@@ -1,13 +1,13 @@
 <article [ngStyle]="{'border-top': '5px solid ' + getAccent()}" class="card">
   <div class="head">
-    <h2 [class.highlight]="isHighlighted" (dblclick)="getErrorHighlight()">{{ card.title }}</h2>
-    <div [class.highlight]="isIconHighlighted" (dblclick)="getIconErrorHighlight()" class="chip">{{ card.icon }}</div>
+    <h2 [class.highlight]="isHighlighted" (click)="getErrorHighlight()">{{ card.title }}</h2>
+    <div [class.highlight]="isIconHighlighted" (click)="getIconErrorHighlight()" class="chip">{{ card.icon }}</div>
   </div>
 
   <div class="amount" [class.negative]="card.negative">
     <span class="sign">{{ amountSign }}</span>
-    <span class="major" [class.highlight]="isAmountHighlighted" (dblclick)="getAmountErrorHighlight()">€ {{ card.amount
-      }}</span>,<span class="minor" [class.highlight]="isAmountHighlighted" (dblclick)="getAmountErrorHighlight()">{{
+    <span class="major" [class.highlight]="isAmountHighlighted" (click)="getAmountErrorHighlight()">€ {{ card.amount
+      }}</span>,<span class="minor" [class.highlight]="isAmountHighlighted" (click)="getAmountErrorHighlight()">{{
       card.amountCents }}</span>
   </div>
   @if (card.available !== undefined || card.prebooked !== undefined) {
@@ -16,14 +16,14 @@
     <div>–€{{ card.prebooked }} prebooked</div>
     }
     @if (card.available) {
-    <div [class.highlight]="isAvailAmountHighlighted" (dblclick)="getAvailAmountErrorHighlight()">€ {{ card.available }}
+    <div [class.highlight]="isAvailAmountHighlighted" (click)="getAvailAmountErrorHighlight()">€ {{ card.available }}
       available</div>
     }
   </div>
   }
 
   @if(card.actionText) {
-  <button class="ghost" (click)="goToTransfer()">{{ card.actionText }}</button>
+  <button class="ghost" (click)="goToTransfer(card.actionText)">{{ card.actionText }}</button>
   }
 
 </article>
