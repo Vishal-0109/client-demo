@@ -1,5 +1,5 @@
 <div class="account-card">
-    <div class="account-icon">
+    <div [ngClass]="getAccountIcon()" [class.highlight]="isBankIconHighlighted" (click)=getIconHighlight()>
         <span>🏦</span>
     </div>
     <div class="account-details">
