@@ -24,7 +24,6 @@ export class AccountCardComponent {
     const savedIsIconHighlighted = sessionStorage.getItem('isIconHighlighted');
     const savedIsAmountHighlighted = sessionStorage.getItem('isAmountHighlighted');
     const savedIsAvailAmountHighlighted = sessionStorage.getItem('isAvailAmountHighlighted');
-    console.log(this.card)
     if (this.card.title !== null) {
       if (savedIsHighlighted !== null && this.card.title === 'girrro account') {
         this.isHighlighted = JSON.parse(savedIsHighlighted);

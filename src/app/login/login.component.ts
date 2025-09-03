@@ -31,8 +31,6 @@ export class LoginComponent {
 
     // Auto-redirect after 4 digits
     if (this.pin.length === 4) {
-      const fullPin = this.pin.join('');
-      console.log('PIN entered:', fullPin);
       this.router.navigate(['/accounts']); // replace with your route
     }
   }
