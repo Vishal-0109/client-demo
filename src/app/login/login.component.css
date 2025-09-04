@@ -146,3 +146,14 @@ h2 {
     text-decoration: underline;
     cursor: pointer;
 }
+
+button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  background: #1976d2;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}

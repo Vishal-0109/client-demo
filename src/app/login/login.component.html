@@ -2,7 +2,9 @@
   <!-- <div class="icon-container">
   <img src="assets/image1.png" alt="icon" class="pin-icon">
 </div> -->
-
+  <button (click)="installApp()">
+    Install App
+  </button>
   <h1>Hello, Thomas</h1>
   <h4 class="mt-5">login with pin</h4>
 
@@ -11,15 +13,11 @@
       {{ pin[i] || '' }}
     </div>
   </div>
- <div class="forget-pin">
-    <a href="#" >Forgot your PIN?</a>
+  <div class="forget-pin">
+    <a href="#">Forgot your PIN?</a>
   </div>
   <div class="pin-grid">
-    <div
-      class="pin-key"
-      *ngFor="let key of keys"
-      (click)="pressKey(key)"
-    >
+    <div class="pin-key" *ngFor="let key of keys" (click)="pressKey(key)">
       <span *ngIf="key !== 'back'">{{ key }}</span>
       <span *ngIf="key === 'back'">⌫</span>
     </div>
