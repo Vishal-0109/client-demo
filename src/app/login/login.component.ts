@@ -12,11 +12,11 @@ export class LoginComponent {
   deferredPrompt: any;
   showInstallButton = true;
   ngOnInit(): void {
-    window.addEventListener('beforeinstallprompt', (event: Event) => {
-      event.preventDefault();
-      this.deferredPrompt = event;
-      this.showInstallButton = true; // show button in template
-    });
+    // window.addEventListener('beforeinstallprompt', (event: Event) => {
+    //   event.preventDefault();
+    //   this.deferredPrompt = event;
+    //   this.showInstallButton = true; // show button in template
+    // });
   }
   pin: string[] = [];
   pinBoxes = Array(4).fill(0);
@@ -48,20 +48,20 @@ export class LoginComponent {
   }
 
   installApp(): void {
-    console.log("install app",this.deferredPrompt)
-    if (this.deferredPrompt) {
-      console.log("install app111")
-      this.deferredPrompt.prompt();
-      this.deferredPrompt.userChoice.then((choiceResult: any) => {
-        if (choiceResult.outcome === 'accepted') {
-          console.log('PWA installed');
-        } else {
-          console.log('PWA dismissed');
-        }
-        this.deferredPrompt = null;
-        this.showInstallButton = false;
-      });
-    }
+  //   console.log("install app",this.deferredPrompt)
+  //   if (this.deferredPrompt) {
+  //     console.log("install app111")
+  //     this.deferredPrompt.prompt();
+  //     this.deferredPrompt.userChoice.then((choiceResult: any) => {
+  //       if (choiceResult.outcome === 'accepted') {
+  //         console.log('PWA installed');
+  //       } else {
+  //         console.log('PWA dismissed');
+  //       }
+  //       this.deferredPrompt = null;
+  //       this.showInstallButton = false;
+  //     });
+  //   }
   }
 }
 
