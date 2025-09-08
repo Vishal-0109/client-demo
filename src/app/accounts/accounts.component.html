@@ -9,7 +9,8 @@
           <line x1="21" y1="21" x2="16.65" y2="16.65" />
         </svg>
       </button>
-      <button class="icon-btn profile" aria-label="logout" title="Logout" (click)="onLogout()">
+      <button mat-raised-button color="accent" (click)="onLogout()" class="icon-btn profile" aria-label="logout"
+        title="Logout">
         <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"
           stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="9" />
@@ -29,4 +30,6 @@
   </main>
 
   <app-bottom-nav></app-bottom-nav>
+
+
 </div>

@@ -1,0 +1,43 @@
+/* Title styling */
+.dialog-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1976d2; /* Material blue */
+  margin: 0;
+  padding: 8px 16px;
+}
+
+/* Content area */
+.dialog-content {
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 8px 16px;
+  color: #333;
+}
+
+/* Actions (button row) */
+.dialog-actions {
+  padding: 8px 16px 16px;
+}
+
+/* Button */
+/* Custom blue button */
+.button {
+  background-color: #1976d2;  /* Material Blue 500 */
+  color: white;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 6px 18px;
+  text-transform: none;       /* Prevent ALL CAPS */
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #1565c0;  /* Darker blue on hover */
+}
+
+.button:disabled {
+  background-color: #90caf9;  /* Light blue for disabled */
+  color: #fff;
+}
+

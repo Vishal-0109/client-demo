@@ -3,6 +3,8 @@ import { AccountCard } from '../models';
 import { AccountDetailCardComponent } from '../account-detail-card/account-detail-card.component'
 import { ActivatedRoute, Router } from '@angular/router';
 import { HighlightService } from '../service/highlight.service';
+import { ModalComponent } from '../modal/modal.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-account-detail.component',
@@ -14,7 +16,7 @@ export class AccountDetailComponent {
   isTitleHighlighted = false;
   actionText;
   title = 'New Transfer'
-  constructor(private router: Router, private route: ActivatedRoute, private highlightService: HighlightService) {
+  constructor(private router: Router, private route: ActivatedRoute, private highlightService: HighlightService, private dialog: MatDialog) {
     this.actionText = this.route.snapshot.paramMap.get('actionText');
     const saved = sessionStorage.getItem('isTitleHighlighted');
     const savedActionText = sessionStorage.getItem('actionText');
@@ -37,7 +39,16 @@ export class AccountDetailComponent {
   }
 
   onLogout() {
-    alert("Total selected bugs: " + this.highlightService.count.value);
+    // alert("Total selected bugs: " + this.highlightService.count.value);
+    this.dialog.open(ModalComponent, {
+      data: {
+        title: 'Bugs',
+        message: 'Total selected bugs: ' + this.highlightService.count.value
+      },
+      width: '90%',       // almost full width on small devices
+      maxWidth: '400px',  // don’t exceed this on larger screens
+      height: 'auto'
+    })
     this.router.navigate(['/']);
     this.highlightService.count.next(0);
     sessionStorage.clear();

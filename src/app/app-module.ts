@@ -2,13 +2,16 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { routes } from './app.routes';
-import { App } from './app';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
   declarations: [
   ],
   imports: [
+    MatDialogModule,
+    MatButtonModule,
     BrowserModule,
     RouterModule.forRoot(routes)
   ],
