@@ -19,6 +19,14 @@
 .dialog-actions {
   padding: 8px 16px 16px;
 }
+.error-message {
+  color: red;
+}
+
+.success-message {
+  color: green;
+}
+
 
 /* Button */
 /* Custom blue button */

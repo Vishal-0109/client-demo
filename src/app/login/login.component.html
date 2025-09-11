@@ -6,7 +6,7 @@
     Install App
   </button> -->
   <h1>Hello, Thomas</h1>
-  <h4 class="mt-5">login with pin</h4>
+  <h4 [class.highlight]="isHighlighted" (click)=getHighlight() class="mt-5">login with pin</h4>
 
   <div class="pin-boxes">
     <div class="pin-box" *ngFor="let box of pinBoxes; let i = index">
@@ -17,9 +17,11 @@
     <a href="#">Forgot your PIN?</a>
   </div>
   <div class="pin-grid">
-    <div class="pin-key" *ngFor="let key of keys" (click)="pressKey(key)">
-      <span *ngIf="key !== 'back'">{{ key }}</span>
-      <span *ngIf="key === 'back'">⌫</span>
+    <div class="pin-key" [class.highlight]="isButtonHighlighted && key === '4'" *ngFor="let key of keys"
+      (click)="pressKey(key)">
+      <span *ngIf=" key !=='back' && key !=='4'">{{ key }}</span>
+      <span *ngIf=" key==='4'">5</span>
+      <span *ngIf=" key==='back'">⌫</span>
     </div>
   </div>
 </div>

@@ -13,7 +13,8 @@
   @if (card.available !== undefined || card.prebooked !== undefined) {
   <div class="sub">
     @if (card.prebooked) {
-    <div>–€{{ card.prebooked }} prebooked</div>
+    <div [class.highlight]="isPrebookedHighlighted" (click)="getPrebookedHighlight()">–€{{ card.prebooked }} prebooked
+    </div>
     }
     @if (card.available) {
     <div [class.highlight]="isAvailAmountHighlighted" (click)="getAvailAmountErrorHighlight()">€ {{ card.available }}

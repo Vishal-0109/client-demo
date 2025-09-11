@@ -26,12 +26,12 @@ export class AccountDetailComponent {
   }
 
   accounts: AccountCard[] = [
-    { id: 1, account: 'At XX XXX XX123', currency: '$', amount: 1232, amountCents: 38 },
-    { id: 2, account: 'At XX XXX XX124', currency: '€', amount: 1088, amountCents: 19 },
-    { id: 3, account: 'At XX XXX XX125', currency: '€', amount: 1090, amountCents: 15 },
-    { id: 4, account: 'At XX XXX XX126', currency: '€', amount: 1666, amountCents: 22 },
-    { id: 5, account: 'At XX XXX XX127', currency: '-MX$', amount: 17236, amountCents: 26 },
-    { id: 6, account: 'At XX XXX XX128', currency: '-KZT', amount: 15720, amountCents: 27 },
+    { id: 1, account: 'At 45 111 21123', currency: '$', amount: 1232, amountCents: 38 },
+    { id: 2, account: 'At 29 111 33424', currency: '€', amount: 1088, amountCents: 19 },
+    { id: 3, account: 'At 66 111 21125', currency: '€', amount: 1090, amountCents: 15 },
+    { id: 4, account: '', currency: '€', amount: 1666, amountCents: 22 },
+    { id: 5, account: 'At 67 111 21127', currency: '-MX$', amount: 17236, amountCents: 26 },
+    { id: 6, account: 'At 87 111 21128', currency: '-KZT', amount: 15720, amountCents: 27 },
   ];
 
   goBack() {

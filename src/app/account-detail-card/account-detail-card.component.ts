@@ -12,10 +12,16 @@ import { HighlightService } from '../service/highlight.service';
 export class AccountDetailCardComponent {
   @Input() card!: AccountCard;
   isBankIconHighlighted = false;
+  isAccountHighlighted = false;
   ngOnInit() {
     const saved = sessionStorage.getItem('isBankIconHighlighted');
     if (saved !== null && this.card.amount === 1088) {
       this.isBankIconHighlighted = JSON.parse(saved);
+    }
+    const savedIsAccountHighlighted = sessionStorage.getItem('isAccountHighlighted');
+
+    if (savedIsAccountHighlighted !== null && this.card.account === '') {
+      this.isAccountHighlighted = JSON.parse(savedIsAccountHighlighted);
     }
   }
   constructor(private highlightService: HighlightService) { }
@@ -40,6 +46,19 @@ export class AccountDetailCardComponent {
       this.highlightService.increment();
     } else {
       this.highlightService.decrement();
+    }
+  }
+
+  getAccountHighlight() {
+    if (this.card.account === '') {
+      this.isAccountHighlighted = !this.isAccountHighlighted;
+      sessionStorage.setItem("isAccountHighlighted", JSON.stringify(this.isAccountHighlighted))
+
+      if (this.isAccountHighlighted) {
+        this.highlightService.increment();
+      } else {
+        this.highlightService.decrement();
+      }
     }
   }
 }

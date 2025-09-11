@@ -16,6 +16,7 @@ export class AccountCardComponent {
   isIconHighlighted = false;
   isAmountHighlighted = false;
   isAvailAmountHighlighted = false;
+  isPrebookedHighlighted = false;
   isRed = false;
   @Input() card!: AccountCard;
   constructor(private router: Router, private highlightService: HighlightService) { }
@@ -24,6 +25,7 @@ export class AccountCardComponent {
     const savedIsIconHighlighted = sessionStorage.getItem('isIconHighlighted');
     const savedIsAmountHighlighted = sessionStorage.getItem('isAmountHighlighted');
     const savedIsAvailAmountHighlighted = sessionStorage.getItem('isAvailAmountHighlighted');
+    const savedIsPrebookedHighlighted = sessionStorage.getItem('isPrebookedHighlighted');
     if (this.card.title !== null) {
       if (savedIsHighlighted !== null && this.card.title === 'girrro account') {
         this.isHighlighted = JSON.parse(savedIsHighlighted);
@@ -36,6 +38,10 @@ export class AccountCardComponent {
       }
       if (savedIsAvailAmountHighlighted !== null && this.card.title === 'girrro account') {
         this.isAvailAmountHighlighted = JSON.parse(savedIsAvailAmountHighlighted);
+      }
+
+      if (savedIsPrebookedHighlighted !== null && this.card.prebooked === '33,80') {
+        this.isPrebookedHighlighted = JSON.parse(savedIsPrebookedHighlighted);
       }
     }
   }
@@ -77,6 +83,17 @@ export class AccountCardComponent {
       this.isAmountHighlighted = !this.isAmountHighlighted
       sessionStorage.setItem("isAmountHighlighted", JSON.stringify(this.isAmountHighlighted))
       if (this.isAmountHighlighted) {
+        this.highlightService.increment();
+      } else {
+        this.highlightService.decrement();
+      }
+    }
+  }
+  getPrebookedHighlight() {
+    if (this.card.prebooked === '33,80') {
+      this.isPrebookedHighlighted = !this.isPrebookedHighlighted
+      sessionStorage.setItem("isPrebookedHighlighted", JSON.stringify(this.isPrebookedHighlighted))
+      if (this.isPrebookedHighlighted) {
         this.highlightService.increment();
       } else {
         this.highlightService.decrement();

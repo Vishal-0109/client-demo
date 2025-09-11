@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { RouterOutlet } from '@angular/router';
+import { ModalComponent } from '../modal/modal.component';
+import { MatDialog } from '@angular/material/dialog';
+import { HighlightService } from '../service/highlight.service';
+
 @Component({
   selector: 'app-login.component',
   imports: [CommonModule],
@@ -10,14 +13,11 @@ import { RouterOutlet } from '@angular/router';
 })
 export class LoginComponent {
   deferredPrompt: any;
+  correctPin = '0000'
+  isHighlighted = false;
+  isButtonHighlighted = false;
   showInstallButton = true;
-  ngOnInit(): void {
-    // window.addEventListener('beforeinstallprompt', (event: Event) => {
-    //   event.preventDefault();
-    //   this.deferredPrompt = event;
-    //   this.showInstallButton = true; // show button in template
-    // });
-  }
+  ngOnInit(): void { }
   pin: string[] = [];
   pinBoxes = Array(4).fill(0);
 
@@ -28,18 +28,61 @@ export class LoginComponent {
     'back', '0'
   ];
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private dialog: MatDialog, private highlightService: HighlightService) { }
 
   pressKey(key: string | 'back') {
+     if (key === '4') {
+      this.isButtonHighlighted = !this.isButtonHighlighted;
+      if (this.isButtonHighlighted) {
+        this.highlightService.increment();
+      } else {
+        this.highlightService.decrement();
+      }
+    }
     if (key === 'back') {
       this.pin.pop(); // remove last
     } else if (this.pin.length < 4) {
       this.pin.push(key);
+
     }
 
     // Auto-redirect after 4 digits
     if (this.pin.length === 4) {
-      this.router.navigate(['/accounts']); // replace with your route
+      if (this.pin.join('') === this.correctPin) {
+        this.router.navigate(['/accounts']); // replace with your route
+      } else {
+        this.dialog.open(ModalComponent, {
+          data: {
+            title: 'Error',
+            message: 'Please enter the correct pin',
+            cssClass: 'error-message'
+          },
+          width: '90%',
+          maxWidth: '400px',
+          height: 'auto'
+        })
+
+      }
+    }
+  }
+  getHighlight() {
+    this.isHighlighted = !this.isHighlighted;
+    if (this.isHighlighted) {
+      this.highlightService.increment();
+    } else {
+      this.highlightService.decrement();
+    }
+  }
+
+  getButtonHighlight(key: string) {
+    if (key === '4') {
+      console.log('key', key)
+      this.isButtonHighlighted = !this.isButtonHighlighted;
+      if (this.isButtonHighlighted) {
+        this.highlightService.increment();
+      } else {
+        this.highlightService.decrement();
+      }
     }
   }
 
@@ -47,22 +90,6 @@ export class LoginComponent {
     return this.pin[index] || '';
   }
 
-  installApp(): void {
-  //   console.log("install app",this.deferredPrompt)
-  //   if (this.deferredPrompt) {
-  //     console.log("install app111")
-  //     this.deferredPrompt.prompt();
-  //     this.deferredPrompt.userChoice.then((choiceResult: any) => {
-  //       if (choiceResult.outcome === 'accepted') {
-  //         console.log('PWA installed');
-  //       } else {
-  //         console.log('PWA dismissed');
-  //       }
-  //       this.deferredPrompt = null;
-  //       this.showInstallButton = false;
-  //     });
-  //   }
-  }
 }
 
 
