@@ -6,7 +6,7 @@ export interface AccountCard {
     title?: string;
     subtitle?: string;
     amount?: number; // main number
-    amountCents?: number; // for ",25" etc
+    amountCents?: string; // for ",25" etc
     available?: string; // sub caption value
     prebooked?: string; // only for credit card sample
     negative?: boolean; // renders in red and with leading "–"
